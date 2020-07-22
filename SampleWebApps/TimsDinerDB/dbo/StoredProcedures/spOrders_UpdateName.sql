@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[spOrders_UpdateName]
+	@ID int = 0,
+	@ORDERNAME VARCHAR(50)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+	UPDATE dbo.[Order] SET  OrderName = @ORDERNAME WHERE Id = @ID;
+
+END

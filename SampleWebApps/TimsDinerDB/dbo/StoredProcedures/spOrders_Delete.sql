@@ -1,0 +1,10 @@
+﻿CREATE PROCEDURE [dbo].[spOrders_Delete]
+	@ID INT
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+	DELETE FROM dbo.[Order] WHERE Id = @ID
+
+END
