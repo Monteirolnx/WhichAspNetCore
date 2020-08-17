@@ -14,7 +14,7 @@ namespace RPDemoApp.Pages.Orders
         private readonly IFoodData _foodData;
         private readonly IOrderData _orderData;
 
-        public List<SelectListItem> FoodItems { get; set; }
+        public List<SelectListItem> FoodItens { get; set; }
 
         [BindProperty]
         public OrderModel Order { get; set; }
@@ -29,11 +29,11 @@ namespace RPDemoApp.Pages.Orders
         {
             List<FoodModel> food = await _foodData.GetFood();
 
-            FoodItems = new List<SelectListItem>();
+            FoodItens = new List<SelectListItem>();
 
             food.ForEach(f =>
             {
-                FoodItems.Add(new SelectListItem { Value = f.Id.ToString(), Text = f.Title });
+                FoodItens.Add(new SelectListItem { Value = f.Id.ToString(), Text = f.Title });
             });
         }
 

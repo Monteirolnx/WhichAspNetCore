@@ -7,7 +7,9 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TimsDinerDB", "TimsDinerDB\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{411A2944-5A0E-4EC3-B80C-3D7D8478CC2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPDemoApp", "RPDemoApp\RPDemoApp.csproj", "{D962F2F7-B792-4B45-A88B-2CC1F47675BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPDemoApp", "RPDemoApp\RPDemoApp.csproj", "{D962F2F7-B792-4B45-A88B-2CC1F47675BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCDemoApp", "MVCDemoApp\MVCDemoApp.csproj", "{E8C44244-513F-46CF-B027-06286D19498D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{D962F2F7-B792-4B45-A88B-2CC1F47675BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D962F2F7-B792-4B45-A88B-2CC1F47675BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D962F2F7-B792-4B45-A88B-2CC1F47675BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8C44244-513F-46CF-B027-06286D19498D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C44244-513F-46CF-B027-06286D19498D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C44244-513F-46CF-B027-06286D19498D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C44244-513F-46CF-B027-06286D19498D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
