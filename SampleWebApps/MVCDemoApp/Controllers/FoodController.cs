@@ -11,7 +11,7 @@ namespace MVCDemoApp.Controllers
 {
     public class FoodController : Controller
     {
-        private IFoodData _foodData;
+        private readonly IFoodData _foodData;
 
         public FoodController(IFoodData foodData)
         {

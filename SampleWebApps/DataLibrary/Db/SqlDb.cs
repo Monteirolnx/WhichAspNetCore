@@ -25,27 +25,22 @@ namespace DataLibrary.Db
         {
             string connectionString = _config.GetConnectionString(connectionStringName);
 
-            using (IDbConnection connection = new SqlConnection(connectionString))
-            {
-                IEnumerable<T> rows = await connection.QueryAsync<T>(storedProcedure,
-                                                                     parameters,
-                                                                     commandType: CommandType.StoredProcedure);
+            using IDbConnection connection = new SqlConnection(connectionString);
+            IEnumerable<T> rows = await connection.QueryAsync<T>(storedProcedure,
+                                                                 parameters,
+                                                                 commandType: CommandType.StoredProcedure);
 
-                return rows.ToList();
-            }
+            return rows.ToList();
         }
 
         public async Task<int> SaveData<T>(string storedProcedure, T parameters, string connectionStringName)
         {
             string connectionString = _config.GetConnectionString(connectionStringName);
 
-            using (IDbConnection connection = new SqlConnection(connectionString))
-            {
-                return await connection.ExecuteAsync(storedProcedure,
-                                                     parameters,
-                                                     commandType: CommandType.StoredProcedure);
-
-            }
+            using IDbConnection connection = new SqlConnection(connectionString);
+            return await connection.ExecuteAsync(storedProcedure,
+                                                 parameters,
+                                                 commandType: CommandType.StoredProcedure);
         }
 
     }

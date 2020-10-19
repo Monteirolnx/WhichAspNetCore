@@ -63,8 +63,10 @@ namespace MVCDemoApp.Controllers
 
         public async Task<IActionResult> Display(int id)
         {
-            OrderDisplayModel orderDisplayModel = new OrderDisplayModel();
-            orderDisplayModel.Order = await _orderData.GetOrderById(id);
+            OrderDisplayModel orderDisplayModel = new OrderDisplayModel
+            {
+                Order = await _orderData.GetOrderById(id)
+            };
 
             if (orderDisplayModel.Order != null)
             {
@@ -73,6 +75,29 @@ namespace MVCDemoApp.Controllers
                 orderDisplayModel.ItemPurchased = food.Where(x => x.Id == orderDisplayModel.Order.FoodId).FirstOrDefault()?.Title;
             }
             return View(orderDisplayModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update (int id, string orderName)
+        {
+            await _orderData.UpdateOrderName(id, orderName);
+
+            return RedirectToAction("Display", new { id });
+        }
+
+        public async Task<IActionResult> Delete (int id)
+        {
+            OrderModel order = await _orderData.GetOrderById(id);
+
+            return View(order);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete (OrderModel order)
+        {
+            await _orderData.DeleteOrder(order.Id);
+
+            return RedirectToAction("Create");
         }
     }
 }
